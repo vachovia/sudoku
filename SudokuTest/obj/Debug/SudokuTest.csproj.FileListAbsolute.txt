@@ -1,7 +1,0 @@
-C:\Users\Vlad\Desktop\Sudoku\SudokuTest\obj\Debug\SudokuTest.csprojResolveAssemblyReference.cache
-C:\Users\Vlad\Desktop\Sudoku\SudokuTest\bin\Debug\SudokuTest.dll
-C:\Users\Vlad\Desktop\Sudoku\SudokuTest\bin\Debug\SudokuTest.pdb
-C:\Users\Vlad\Desktop\Sudoku\SudokuTest\bin\Debug\Sudoku.exe
-C:\Users\Vlad\Desktop\Sudoku\SudokuTest\bin\Debug\Sudoku.pdb
-C:\Users\Vlad\Desktop\Sudoku\SudokuTest\obj\Debug\SudokuTest.dll
-C:\Users\Vlad\Desktop\Sudoku\SudokuTest\obj\Debug\SudokuTest.pdb
