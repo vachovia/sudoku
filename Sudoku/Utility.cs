@@ -8,16 +8,16 @@ namespace Sudoku
 {
     public static class Utility
     {
-        public static void ReadFromFile(string path,int[,] board)
+        public static List<List<int>> ReadFromFile(string path)
         {
-            StringBuilder sb = new StringBuilder();
-
             List<string> lines = File.ReadLines(path).Where(s=>!string.IsNullOrEmpty(s.Trim())).ToList();
 
             if (lines.Count != 9)
             {
-                throw new Exception("invalid file format.");
+                throw new Exception("invalid sudoku file format.");
             }
+
+            List<List<int>> allNumbers = new List<List<int>>();
             
             for (int i = 0; i < 9; ++i)
             {
@@ -28,12 +28,7 @@ namespace Sudoku
 
                     lineNumbers = GetIntArray(lineNumber);
 
-                    for (int j = 0; j < 9; ++j)
-                    {
-                        board[i, j] = lineNumbers[j];
-                    }
-
-                    sb.Clear();
+                    allNumbers.Add(lineNumbers);
                 }
                 catch(FormatException ex)
                 {
@@ -44,6 +39,21 @@ namespace Sudoku
                     throw new Exception(ex.Message);
                 }
             }
+
+            return allNumbers;
+        }
+
+        public static bool ValidateInput(List<List<int>> allNumbers)
+        {
+            for (int i = 0; i < 9; ++i)
+            {
+                if (allNumbers[i].Count != 9)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         public static List<int> GetIntArray(int num)

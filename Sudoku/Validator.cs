@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Sudoku
 {
-    static class Validator
+    public static class Validator
     {
-        public static bool isValidSudoku(int[,] board)
+        public static bool isValidSudoku(List<List<int>> board)
         {
             for (int i = 0; i < 9; i++)
             {
@@ -18,14 +18,14 @@ namespace Sudoku
 
                 for (int j = 0; j < 9; j++)
                 {
-                    if (!rows.Add(board[i, j]) || !columns.Add(board[j, i])) 
+                    if (!rows.Add(board[i][j]) || !columns.Add(board[j][i])) 
                     {
                         return false;
                     }
 
                     int RowIndex = 3 * (i / 3); int ColIndex = 3 * (i % 3);
 
-                    if (!cube.Add(board[RowIndex + j / 3, ColIndex + j % 3]))
+                    if (!cube.Add(board[RowIndex + j / 3][ColIndex + j % 3]))
                     {
                         return false;
                     }
